@@ -14,6 +14,11 @@ int main() {
     push(s, 4);
     push(s, 5);
     push(s, 4);
+
+    printf("ORIGINAL ORDER\n");
+    print(s);
+    printf("\nREVERSED ORDER\n");
+    reverse(s);
     print(s);
     printf("\nCurrent size: %d\n\n", size(s));
 
@@ -26,6 +31,10 @@ int main() {
     push(s, 17);
     push(s, 11);
     push(s, 19);
+
+    reverse(s);
+    reverse(s);
+
     print(s);
     printf("\nCurrent size: %d\n\n", size(s));
 

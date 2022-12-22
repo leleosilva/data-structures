@@ -59,6 +59,29 @@ int pop(Stack *s) {
     return removed_element;
 }
 
+/* Reverses the order of elements in a stack.
+ *
+ * Because this stack is internally represented as a singly linked list,
+ * reversing functions from both data structures are similar */
+void reverse(Stack *s) {
+    if (!is_empty(s)) {
+        Node *previous_node = s->top;
+        s->top = s->top->next;
+        Node *current_node = s->top;
+
+        previous_node->next = NULL;
+
+        while (s->top != NULL) {
+            s->top = s->top->next;
+            current_node->next = previous_node;
+
+            previous_node = current_node;
+            current_node = s->top;
+        }
+        s->top = previous_node;
+    }
+}
+
 // Returns the element on top of a stack. If the stack is empty, returns -1 by default
 int top(Stack *s) {
     if (!is_empty(s)) {

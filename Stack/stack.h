@@ -17,6 +17,7 @@ int is_empty(Stack *s);
 unsigned size(Stack *s);
 void push(Stack *s, int data);
 int pop(Stack *s);
+void reverse(Stack *s);
 int top(Stack *s);
 void print(Stack *s);
 
