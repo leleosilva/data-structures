@@ -6,6 +6,9 @@
 // Creates and returns a queue
 Queue* initialize() {
     Queue *q = malloc(sizeof(Queue));
+    if (q == NULL) {
+        return NULL;
+    }
     q->front = q->rear = NULL;
     q->quantity = 0;
     return q;
